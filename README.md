@@ -105,3 +105,21 @@ Accelerate a car
 - Returns nothing
 
 To complete the race logic, find all the TODO tags in index.js and read the instructions.
+
+## Final Project 
+### Start race
+<img width="579" alt="Screenshot 2021-03-08 at 16 03 27" src="https://user-images.githubusercontent.com/8181053/110471577-9243a800-80dc-11eb-9468-dba3e5927fc6.png">
+
+### Select racer and track
+<img width="579" alt="Screenshot 2021-03-08 at 16 02 24" src="https://user-images.githubusercontent.com/8181053/110471724-c1f2b000-80dc-11eb-8b7d-6ff47a3051ad.png">
+
+### Get ready for the race 
+<img width="573" alt="Screenshot 2021-03-08 at 16 22 59" src="https://user-images.githubusercontent.com/8181053/110471756-ce770880-80dc-11eb-8c7d-a6226f6deac9.png">
+
+### Leaderboard and progress
+<img width="579" alt="Screenshot 2021-03-08 at 16 03 59" src="https://user-images.githubusercontent.com/8181053/110471781-d6cf4380-80dc-11eb-88d2-2270b36e8ff6.png">
+
+### Results and start a new race
+<img width="573" alt="Screenshot 2021-03-08 at 16 24 53" src="https://user-images.githubusercontent.com/8181053/110472088-39284400-80dd-11eb-993e-95f58fbdbd19.png">
+
+
