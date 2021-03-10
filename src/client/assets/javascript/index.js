@@ -15,14 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 async function onPageLoad() {
 	try {
-		
-		getTracks()
+		await getTracks()
 			.then(tracks => {
 				const html = renderTrackCards(tracks)
 				renderAt('#tracks', html)
 			})
 
-		getRacers()
+		await getRacers()
 			.then((racers) => {
 				const html = renderRacerCars(racers)
 				renderAt('#racers', html)
@@ -32,6 +31,7 @@ async function onPageLoad() {
 		console.error(error)
 	}
 }
+
 
 // Handle clicks
 function setupClickHandlers() {
@@ -307,7 +307,8 @@ function renderRaceStartView(track, racers) {
 			</section>
 		</main>
 		<footer>
-			<div>Icons credits:<a href="https://www.freepik.com" title="Freepik">Freepik, </a> <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a>from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com, </a>
+			<div>Credits: <a href="http://www.freepik.com">Picture designed by upklyak / Freepik</a>
+			<a href="https://www.flaticon.com/authors/srip" title="srip">srip</a>from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com, </a>
 			<a href="https://www.iconfinder.com/icons/3069187/achivement_business_mission_winner_icon" title="Iconfinder">www.iconfinder.com</a>
 			</div>
 		</footer>
