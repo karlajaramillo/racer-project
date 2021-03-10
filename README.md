@@ -25,7 +25,7 @@ This is the final project of the Intermediate JavaScript Nanodegree Program from
 
 ### Results and start a new race
 --------------------------------
-<img width="380" alt="Screenshot 2021-03-10 at 10 09 39" src="https://user-images.githubusercontent.com/8181053/110620391-3f7bf600-8199-11eb-85ed-70a2cae76573.png">
+<img width="350" alt="Screenshot 2021-03-10 at 10 09 39" src="https://user-images.githubusercontent.com/8181053/110620391-3f7bf600-8199-11eb-85ed-70a2cae76573.png">
 
 
 ## API provided by Udacity
