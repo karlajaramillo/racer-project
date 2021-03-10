@@ -1,36 +1,42 @@
-# Welcome to the One and only UdaciRacer Simulation Game
+# Welcome to the Hedgehog Simulation Game
 
 ## Project Introduction
+Let's choose a track and your hedgehog to start the race! You will need to accelerate your racer by clicking an acceleration button. A live updated leaderboard will show player positions and their progress on the track. You still have time to win, just accelerate to be the winner! 
+Finally, when the hedgehogs finish the race, the results will be displayed and you will know who is the winner!
 
-Here is a partially built-out game that races cars—your job is to complete it! Throughout the game logic, you will find _"TODO"_ comments that must be completed in order for the game to work. You are going to use the asynchronous skills you gained in the course to fill in the blanks in this game.
+## Aim of the Project
+This is the final project of the Intermediate JavaScript Nanodegree Program from Udacity. The main purpose of this is to use Asynchronous Programming with JavaScript. Promises are the primary method for dealing with API responses in this game. And Async/Await syntax are used with API calls and internal logic to handle game processes.
 
-The game mechanics are this: you select a player and track, the game begins and you accelerate your racer by clicking an acceleration button. As you accelerate so do the other players and the leaderboard live-updates as players change position on the track. The final view is a results page displaying the players' rankings.
+### Start race
+--------------------------------
+<img width="350" alt="92FA7665-AF50-4D03-A8B3-393E351D46A7" src="https://user-images.githubusercontent.com/8181053/110620156-fa57c400-8198-11eb-82eb-09363b68cfae.png">
 
-The game has three main views:
+### Select racer and track
+--------------------------------
+<img width="350" alt="183BD7B7-28EA-499C-9DB3-78718C9788A3" src="https://user-images.githubusercontent.com/8181053/110620225-0fccee00-8199-11eb-8e5d-bfcf60b7f192.png">
 
-1. The form to create a race
+### Get ready for the race 
+--------------------------------
+<img width="350" alt="Screenshot 2021-03-10 at 10 07 21" src="https://user-images.githubusercontent.com/8181053/110620285-22dfbe00-8199-11eb-8d77-0ddd1f055c72.png">
 
-2. The race progress view (this includes the live-updating leaderboard and acceleration button)
+### Leaderboard and progress
+--------------------------------
+<img width="350" alt="Screenshot 2021-03-10 at 10 07 54" src="https://user-images.githubusercontent.com/8181053/110620354-35f28e00-8199-11eb-885d-b5354292c8ec.png">
 
-3. The race results view
+### Results and start a new race
+--------------------------------
+<img width="380" alt="Screenshot 2021-03-10 at 10 09 39" src="https://user-images.githubusercontent.com/8181053/110620391-3f7bf600-8199-11eb-85ed-70a2cae76573.png">
 
-## Starter Code
 
-We have supplied you with the following:
+## API provided by Udacity
+--------------------------------
+A pre-built API provided by Udacity will create the race selected by the players and return a stream of information lasting the duration of the race, resulting in a final ranking of racers. The API is provided in the form of a binary so that you can run it on any system. Because of this, you cannot edit the API in any way, it is just a black box that we interact with via the API endpoints.
 
-1. An API. The API is provided in the form of a binary held in the bin folder. You never need to open the binary file, as there are no edits you can make to it. Your work will be 100% in the front end.
 
-2. HTML Views. The focus of this course is not UI development or styling practice, so we have already provided you with pieces of UI, all you have to do is call them at the right times.
+## Getting started
+1. The first step you need to do is clone this repository. 
 
-## Getting Started
-
-In order to build this game, we need to run two things: the game engine API and the front end.
-
-### Start the Server
-
-The game engine has been compiled down to a binary so that you can run it on any system. Because of this, you cannot edit the API in any way, it is just a black box that we interact with via the API endpoints.
-
-To run the server, locate your operating system and run the associated command in your terminal at the root of the project.
+2. To run the server, locate your operating system and run the associated command in your terminal at the root of the project.
 
 | Your OS               | Command to start the API                                  |
 | --------------------- | --------------------------------------------------------- |
@@ -38,7 +44,6 @@ To run the server, locate your operating system and run the associated command i
 | Windows               | `ORIGIN_ALLOWED=http://localhost:3000 ./bin/server.exe`   |
 | Linux (Ubuntu, etc..) | `ORIGIN_ALLOWED=http://localhost:3000 ./bin/server-linux` |
 
-Note that this process will use your terminal tab, so you will have to open a new tab and navigate back to the project root to start the front end.
 
 #### WINDOWS USERS -- Setting Environment Variables
 If you are using a windows machine:
@@ -46,80 +51,12 @@ If you are using a windows machine:
 2. Run the following command to add the environment variable:
 ```set DATA_FILE=./data.json```
 
-If you still run into issues running the API server on your machine, you can run this project in the Udacity classroom.
+Note that this process will use your terminal tab, so you will have to open a new tab and navigate back to the project root to start the front end.
+
+2. Top start the frontend, open another terminal tab and being at the root of this project, install the dependencies by running `npm install && npm start`. So, you should be able to access http://localhost:3000.
 
 
-### Start the Frontend
 
-First, run your preference of `npm install && npm start` or `yarn && yarn start` at the root of this project. Then you should be able to access http://localhost:3000.
 
-## Project Requirements
-
-This starter code base has directions for you in `src/client/assets/javascript/index.js`. There you will be directed to use certain asynchronous methods to achieve tasks. You will know you're making progress as you can play through more and more of the game.
-
-### API Calls
-
-To complete the project you must first create the calls to the API. These will all be fetch requests, and all information needed to create the request is provided in the instructions. The API calls are all at the bottom of the file: `src/client/assets/javascript/index.js`.
-
-Below are a list of the API endpoints and the shape of the data they return. These are all of the endpoints you need to complete the game. Consult this information often as you complete the project:
-
-[GET] `api/tracks`
-List of all tracks
-
-- id: number (1)
-- name: string ("Track 1")
-- segments: number[]([87,47,29,31,78,25,80,76,60,14....])
-
-[GET] `api/cars`
-List of all cars
-
-- id: number (3)
-- driver_name: string ("Racer 1")
-- top_speed: number (500)
-- acceleration: number (10)
-- handling: number (10)
-
-[GET] `api/races/${id}`
-Information about a single race
-
-- status: RaceStatus ("unstarted" | "in-progress" | "finished")
-- positions object[] ([{ car: object, final_position: number (omitted if empty), speed: number, segment: number}])
-
-[POST] `api/races`
-Create a race
-
-- id: number
-- track: string
-- player_id: number
-- cars: Cars[] (array of cars in the race)
-- results: Cars[] (array of cars in the position they finished, available if the race is finished)
-
-[POST] `api/races/${id}/start`
-Begin a race
-
-- Returns nothing
-
-[POST] `api/races/${id}/accelerate`
-Accelerate a car
-
-- Returns nothing
-
-To complete the race logic, find all the TODO tags in index.js and read the instructions.
-
-## Final Project 
-### Start race
-<img width="579" alt="Screenshot 2021-03-08 at 16 03 27" src="https://user-images.githubusercontent.com/8181053/110471577-9243a800-80dc-11eb-9468-dba3e5927fc6.png">
-
-### Select racer and track
-<img width="579" alt="Screenshot 2021-03-08 at 16 02 24" src="https://user-images.githubusercontent.com/8181053/110471724-c1f2b000-80dc-11eb-8b7d-6ff47a3051ad.png">
-
-### Get ready for the race 
-<img width="573" alt="Screenshot 2021-03-08 at 16 22 59" src="https://user-images.githubusercontent.com/8181053/110471756-ce770880-80dc-11eb-8c7d-a6226f6deac9.png">
-
-### Leaderboard and progress
-<img width="579" alt="Screenshot 2021-03-08 at 16 03 59" src="https://user-images.githubusercontent.com/8181053/110471781-d6cf4380-80dc-11eb-88d2-2270b36e8ff6.png">
-
-### Results and start a new race
-<img width="573" alt="Screenshot 2021-03-08 at 16 24 53" src="https://user-images.githubusercontent.com/8181053/110472088-39284400-80dd-11eb-993e-95f58fbdbd19.png">
 
 
